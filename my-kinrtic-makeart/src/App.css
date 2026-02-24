@@ -1,0 +1,57 @@
+import { useState } from 'react';
+import { Canvas } from './components/Canvas/Canvas';
+import { UI } from './components/UI/UI';
+import './App.css';
+
+// ROOT COMPONENT
+// Manages global state (current word)
+// Composes child components with data flow via props
+function App() {
+  // useState hook: returns [value, setterFunction]
+  // TC: O(1) initialization, O(1) update (batched by React)
+  const [word, setWord] = useState('REACT');
+
+  return (
+    // Container div fills viewport
+    <div className="app">
+      {/* 
+        Canvas receives word as prop (read-only)
+        Canvas doesn't know about setWord — one-way data flow
+      */}
+      <Canvas word={word} />
+      
+      {/* 
+        UI receives both current value and setter callback
+        onChangeWord allows UI to request state changes upward
+        PATTERN: Controlled component — parent owns state, child triggers changes
+      */}
+      <UI 
+        currentWord={word} 
+        onChangeWord={setWord} 
+      />
+    </div>
+  );
+}
+/* CSS Reset: remove default browser styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  /* Border-box: width includes padding/border */
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;  /* Prevent scrollbars */
+  background: #0a0a0a;
+}
+
+.app {
+  /* Viewport units: responsive to window size */
+  width: 100vw;
+  height: 100vh;
+  
+  /* Positioning context for absolute children (UI panel) */
+  position: relative;
+}

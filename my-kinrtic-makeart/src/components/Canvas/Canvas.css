@@ -1,0 +1,18 @@
+/* CSS: Cascading Style Sheets
+   Declarative language for visual presentation
+   TC: O(1) application per element (browser uses optimized matching) */
+
+.canvas {
+  /* Fill parent container completely */
+  width: 100%;
+  height: 100%;
+
+  /* Remove default inline spacing */
+  display: block;
+
+  /* Hide default cursor for immersive experience */
+  cursor: none;
+
+  /* Fallback background (engine also clears each frame) */
+  background: #0a0a0a;
+}

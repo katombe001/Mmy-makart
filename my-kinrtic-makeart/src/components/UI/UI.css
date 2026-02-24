@@ -1,0 +1,88 @@
+.ui-container {
+  /* Positioning: removed from document flow, placed absolutely */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  /* Stacking context: above canvas (z-index only works with positioned elements) */
+  z-index: 100;
+
+  font-family: "SF Mono", Monaco, monospace;
+}
+
+.ui-panel {
+  /* Semi-transparent background with blur effect */
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid #0ff;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 200px;
+
+  /* Backdrop blur: GPU-intensive effect */
+  backdrop-filter: blur(10px);
+}
+
+/* Descendant selectors: O(1) matching with browser optimization */
+.ui-panel h3,
+.ui-panel h4 {
+  color: #0ff;
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.word-display {
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  letter-spacing: 4px;
+}
+
+.word-grid {
+  display: grid;
+  /* CSS Grid: O(1) layout calculation (surprisingly efficient) */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.word-btn {
+  padding: 10px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #888;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+
+  /* CSS transitions: GPU-accelerated if animating transform/opacity */
+  transition: all 0.2s;
+}
+
+/* Pseudo-class: O(1) matching on hover state */
+.word-btn:hover {
+  border-color: #0ff;
+  color: #0ff;
+}
+
+/* Conditional styling based on state */
+.word-btn.active {
+  background: #0ff;
+  color: #000;
+  border-color: #0ff;
+}
+
+.hint {
+  color: #666;
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.5;
+  padding-top: 16px;
+  border-top: 1px solid #222;
+}
