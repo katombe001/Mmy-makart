@@ -34,7 +34,7 @@ function App() {
 }
 /* CSS Reset: remove default browser styling */
 * {
-  margin: 0;
+  margin: auto;
   padding: 0;
   /* Border-box: width includes padding/border */
 }
