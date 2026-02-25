@@ -11,8 +11,8 @@ function App() {
       <h1 className="center" style="color:blue;text-align:center;">
         MAKEART
       </h1>
-      <div className="center">
-        <p className="center">
+      <div className="center" style="color:blue;text-align:center;">
+        <p className="center" style="color:blue;text-align:center;">
           Welcome to "MAKART" playground. A place you can enjoy learning and
           making art yourself
         </p>
