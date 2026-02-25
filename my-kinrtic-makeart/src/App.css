@@ -55,6 +55,8 @@ body {
   /* Positioning context for absolute children (UI panel) */
   position: relative;
 }
+
+
 .center {
   border: 5px solid;
   margin: auto;
