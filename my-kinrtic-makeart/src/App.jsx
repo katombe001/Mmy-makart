@@ -8,12 +8,14 @@ function App() {
 
   return (
     <>
-      <h1 className="center">MAKEART</h1>
+      <h1 className="center" style="color:blue;text-align:center;">
+        MAKEART
+      </h1>
       <div className="center">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p className="center">Welcome to my ARTWORLD</p>
+        <p className="center">
+          Welcome to "MAKART" playground. A place you can enjoy learning and
+          making art yourself
+        </p>
       </div>
       <p className="read-the-docs center">Click on The menu to learn more</p>
     </>

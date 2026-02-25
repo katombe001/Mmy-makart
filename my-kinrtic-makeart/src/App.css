@@ -41,8 +41,8 @@ function App() {
 
 html,
 body {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   overflow: hidden;  /* Prevent scrollbars */
   background: #d69648;
 }
